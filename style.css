@@ -1,0 +1,124 @@
+body{
+    background-color: darkslategray;
+}
+#wraper{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+a{
+    color: #000ff;
+}
+.catlinks{
+    display: block;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border:  1px solid #000000;
+    margin-bottom: 5px;
+    background-color: #cccccc;
+    color: #000000;
+}
+
+.catlinks:hover{
+    background-color: #dddddd;
+}
+
+h2{
+    color: white;
+}
+.container{
+  border-style: double;
+  border-width: 5px;
+    border-color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+    text-align: center;
+    align-content: center;
+}
+.button_cont{
+    margin: 50px;
+    width: 230px;
+}
+
+.example_f, .example_f2, .example_f3 {
+
+   background: linear-gradient(to right, #67b26b, #4ca2cb) !important;
+   color: #FFFFFF;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-transform: uppercase;
+   font-size: 22px;
+   padding: 20px;
+   cursor: pointer;
+    text-decoration: none;
+    
+ }
+ .example_f span {
+   cursor: pointer;
+   display: inline-block;
+   position: relative;
+   transition: 0.4s;
+ }
+ .example_f span:after {
+   content: '\2192';
+   position: absolute;
+   opacity: 0;
+   top: 15px;
+   right: -20px;
+   transition: 0.5s;
+ }
+ .example_f:hover span {
+   padding-right: 25px;
+ }
+ .example_f:hover span:after {
+   opacity: 1;
+   right: 0;
+ }
+
+ .example_f2 span {
+   cursor: pointer;
+   display: inline-block;
+   position: relative;
+   transition: 0.4s;
+ }
+ .example_f2 span:after {
+   content: '\002B';
+   position: absolute;
+   opacity: 0;
+   top: 15px;
+   right: -20px;
+   transition: 0.5s;
+ }
+ .example_f2:hover span {
+   padding-right: 25px;
+ }
+ .example_f2:hover span:after {
+   opacity: 1;
+   right: 0;
+ }
+
+ .example_f3 span {
+   cursor: pointer;
+   display: inline-block;
+   position: relative;
+   transition: 0.4s;
+ }
+ .example_f3 span:after {
+   content: '\1F50E';
+   position: absolute;
+   opacity: 0;
+   top: 15px;
+   right: -20px;
+   transition: 0.5s;
+ }
+ .example_f3:hover span {
+   padding-right: 25px;
+ }
+ .example_f3:hover span:after {
+   opacity: 1;
+   right: 0;
+ }
