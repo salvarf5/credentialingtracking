@@ -1,19 +1,21 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>Ver trabajadores</title>
-    <link rel="stylesheet" type="text/css" href="estilos/style.php"/>
+    <meta charset="utf-8">
+    <title>Ver trabajadores</title>
+    <link rel="stylesheet" type="text/css" href="estilos/style.php" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-    <body>
+</head>
+
+<body>
     <div id="wraper">
-     <?php echo "<a class='example_e' href='buscar_trabajador.php'>&#8592; Go back!</a>";?>
-        <a href="index.php"><button class="btn"  style="cursor:pointer;" title="Return to Homepage"><i class="fa fa-home"></i></button></a>
-        
+        <?php echo "<a class='example_e' href='buscar_trabajador.php'>&#8592; Go back!</a>";?>
+            <a href="index.php">
+                <button class="btn" style="cursor:pointer;" title="Return to Homepage"><i class="fa fa-home"></i></button>
+            </a>
 
-
-<?php
+            <?php
 session_start();
     include_once('conexion.php');
     require_once('validaciones.php');   
@@ -46,8 +48,9 @@ session_start();
             echo "<p style='color:white;padding-top:25px;text-align:center;'>No results found</p>";
         }
     }
-	
+
 ?>
-        </div>
+    </div>
 </body>
-    </html>
+
+</html>

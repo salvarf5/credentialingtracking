@@ -1,24 +1,23 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>Vista Trabajador</title>
+    <meta charset="utf-8">
+    <title>Vista Trabajador</title>
 
-
-    <link rel="stylesheet" type="text/css" href="estilos/style.php"/>
+    <link rel="stylesheet" type="text/css" href="estilos/style.php" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-	
-	<body>
-		<div id="wraper">
-			<h1 align="center">Employee</h1><br />
-<?php
+
+<body>
+    <div id="wraper">
+        <h1 align="center">Employee</h1>
+        <br />
+        <?php
 session_start();
 ?>
 
-
-
-<?php
+            <?php
 include_once("conexion.php");
 $cid = $_GET['cid'];
 $trabajador = "";
@@ -47,92 +46,91 @@ if (mysqli_num_rows($res) == 1){
             }else{
                 $professionalexp = DATE_FORMAT(new DateTime($row['professionalexp']),'m-d-Y');
             }
-        
+
         if ($row['cpr'] == '0000-00-00')
             {
                 $cpr = "";
             }else{
                 $cpr = DATE_FORMAT(new DateTime($row['cpr']),'m-d-Y');
             }
-        
+
          if ($row['driverlicense'] == '0000-00-00')
             {
                 $driverlicense = "";
             }else{
                 $driverlicense = DATE_FORMAT(new DateTime($row['driverlicense']),'m-d-Y');
             }
-        
+
          if ($row['autoinsurance'] == '0000-00-00')
             {
                 $autoinsurance = "";
             }else{
                 $autoinsurance = DATE_FORMAT(new DateTime($row['autoinsurance']),'m-d-Y');
             }
-        
+
         if ($row['liability'] == '0000-00-00')
             {
                 $liability = "";
             }else{
                 $liability = DATE_FORMAT(new DateTime($row['liability']),'m-d-Y');
             }
-        
+
         if ($row['physical'] == '0000-00-00')
             {
                 $physical = "";
             }else{
                 $physical = DATE_FORMAT(new DateTime($row['physical']),'m-d-Y');
             }
-        
+
         if ($row['tbt'] == '0000-00-00')
             {
                 $tbt = "";
             }else{
                 $tbt = DATE_FORMAT(new DateTime($row['tbt']),'m-d-Y');
             }
-        
+
         if ($row['background'] == '0000-00-00')
             {
                 $background = "";
             }else{
                 $background = DATE_FORMAT(new DateTime($row['background']),'m-d-Y');
             }
-        
+
         if ($row['annualcredit'] == '0000-00-00')
             {
                 $annualcredit = "";
             }else{
                 $annualcredit = DATE_FORMAT(new DateTime($row['annualcredit']),'m-d-Y');
             }
-        
+
         if ($row['biannualcredit'] == '0000-00-00')
             {
                 $biannualcredit = "";
             }else{
                 $biannualcredit = DATE_FORMAT(new DateTime($row['biannualcredit']),'m-d-Y');
             }
-        
+
         if ($row['passport_work'] == '0000-00-00')
             {
                 $passportwork = "";
             }else{
                 $passportwork = DATE_FORMAT(new DateTime($row['passport_work']),'m-d-Y');
             }
-        
+
          if ($row['90days'] == '0000-00-00')
             {
                 $ndays = "";
             }else{
                 $ndays = DATE_FORMAT(new DateTime($row['90days']),'m-d-Y');
             }
-        
+
         if ($row['annualdays'] == '0000-00-00')
             {
                 $annualdays = "";
             }else{
                 $annualdays = DATE_FORMAT(new DateTime($row['annualdays']),'m-d-Y');
             }
-        
-        
+
         /*CHECK EXPIRATION*/
         $todays_date = date("Y-m-d");
         $today = strtotime($todays_date);
@@ -182,55 +180,55 @@ if (mysqli_num_rows($res) == 1){
             } else {
              $color5 = "red";
             }
-        
+
         if ($expiration_date6 > $today || $physical == "") {
             $color6 = "darkslategray";
             } else {
              $color6 = "red";
             }
-        
+
         if ($expiration_date7 > $today || $tbt == "") {
             $color7 = "darkslategray";
             } else {
              $color7 = "red";
             }
-        
+
         if ($expiration_date8 > $today || $background == "") {
             $color8 = "darkslategray";
             } else {
              $color8 = "red";
             }
-        
+
         if ($expiration_date9 > $today || $annualcredit == "") {
             $color9 = "darkslategray";
             } else {
              $color9 = "red";
             }
-        
+
         if ($expiration_date10 > $today || $biannualcredit == "") {
             $color10 = "darkslategray";
             } else {
              $color10 = "red";
             }
-        
+
         if ($expiration_date11 > $today || $passportwork == "") {
             $color11 = "darkslategray";
             } else {
              $color11 = "red";
             }
-        
+
         if ($expiration_date12 > $today || $ndays == "") {
             $color12 = "darkslategray";
             } else {
              $color12 = "red";
             }
-        
+
         if ($expiration_date13 > $today || $annualdays == "") {
             $color13 = "darkslategray";
             } else {
              $color13 = "red";
             }
-        
+
             }
         $trabajador .= "<tr><th id='nombre' class='table_header2'>Name<td headers='nombre' border: 1px solid black>".$name."  ".$lastname." (".$title.")</td></th></tr>";
         $trabajador .= "<tr><th colspan='2'>&nbsp;</th></tr>";
@@ -278,16 +276,17 @@ if (mysqli_num_rows($res) == 1){
 }
 
 ?>
-</div>
+    </div>
 
 </body>
-    <script type="text/javascript">
+<script type="text/javascript">
     var elems = document.getElementsByClassName('confirmation');
-    var confirmIt = function (e) {
+    var confirmIt = function(e) {
         if (!confirm('Are you sure you want to delete this employee?')) e.preventDefault();
     };
     for (var i = 0, l = elems.length; i < l; i++) {
         elems[i].addEventListener('click', confirmIt, false);
     }
 </script>
+
 </html>

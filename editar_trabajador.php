@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>Editar Trabajador</title>
-  <link rel="stylesheet" type="text/css" href="estilos/style.php"/>
+    <meta charset="utf-8">
+    <title>Editar Trabajador</title>
+    <link rel="stylesheet" type="text/css" href="estilos/style.php" />
 </head>
 <?php
 session_start();
@@ -123,9 +124,10 @@ $cid = $_GET['cid'];
             location="vista_trabajador.php?cid='.$cid.'";
             window.opener.location.reload();
             </script>';
-            
+
         }
      }   
 
 ?>
+
 </html>
