@@ -1,22 +1,24 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>Ver trabajadores</title>
-    <link rel="stylesheet" type="text/css" href="estilos/style.php"/>
+    <meta charset="utf-8">
+    <title>Ver trabajadores</title>
+    <link rel="stylesheet" type="text/css" href="estilos/style.php" />
 
 </head>
-	
-	<body>
-		<div id="wraper">
-            <?php echo "<a class='example_e' href='index.php'>&#8592; Go back!</a>";?>
-			<h1 align="center">Active Employees</h1><br />
-            
-<?php
+
+<body>
+    <div id="wraper">
+        <?php echo "<a class='example_e' href='index.php'>&#8592; Go back!</a>";?>
+            <h1 align="center">Active Employees</h1>
+            <br />
+
+            <?php
 session_start();
 ?>
-<div id="categorias">
-<?php
+                <div id="categorias">
+                    <?php
 include_once("conexion.php");
 $sql = "SELECT * FROM caregiver ORDER BY lastname ASC";
 $res = mysqli_query($con, $sql) or die(mysqli_error());
@@ -43,10 +45,8 @@ if (mysqli_num_rows($res) > 0){
 }
 ?>
 
-</div>
-</div>
+                </div>
+    </div>
 </body>
+
 </html>
-
-
-        
