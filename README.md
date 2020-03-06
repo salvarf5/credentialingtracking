@@ -1,5 +1,5 @@
 # Employee Credentialing Tracking
-Web appliction to track employee credentials giving you alert colors and sending automated email to the specific employee.
+Web application to track employee credentials giving you alert colors and sending automated email to the specific employee.
 
 # How it works
 * The system is built 100% in PHP (some HTML, Javascript and JQuery knowledge is required).
