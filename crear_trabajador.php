@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <title>Caregiver - Crear Trabajador</title>
     <link rel="stylesheet" type="text/css" href="estilos/style.php" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+        rel="stylesheet"  type='text/css'>
 
 </head>
 
@@ -49,11 +52,11 @@ $nuevoannualeval = "";
                         <p>Name: </p>
                         <input type="text" name="nombrenuevo" class="entradas" value="<?php echo $nuevonombre ?>" autocomplete="off" required/>
                         <p>Last Name: </p>
-                        <input type="text" name="apellidonuevo" class="entradas" value="<?php echo $nuevoapellido ?>" autocomplete="off" / required>
+                        <input type="text" name="apellidonuevo" class="entradas" value="<?php echo $nuevoapellido ?>" autocomplete="off" required/>
                         <p>DOB: </p>
-                        <input type="date" name="fechananuevo" class="entradas" value="<?php echo $nuevofechana ?>" autocomplete="off" / required>
+                        <input type="date" name="fechananuevo" class="entradas" value="<?php echo $nuevofechana ?>" autocomplete="off"  required/>
                         <p>Social Security: </p>
-                        <input type="text" name="segurosocialnuevo" class="entradas" value="<?php echo $nuevosegurosocial ?>" autocomplete="off" />
+                        <input type="text" id="ssn" maxlength="11" name="segurosocialnuevo" pattern="^\d{3}-\d{2}-\d{4}$" class="entradas" value="<?php echo $nuevosegurosocial ?>" autocomplete="off" required/>
                         <p>Email: </p>
                         <input type="email" name="emailnuevo" class="entradas" value="<?php echo $nuevoemail ?>" autocomplete="off" / required>
                         <p>Title: </p>
@@ -87,10 +90,34 @@ $nuevoannualeval = "";
                         <input type="date" name="annualevalnuevo" class="entradas" value="<?php echo $nuevoannualeval ?>" autocomplete="off" />
                         <br />
                         <input type="hidden" name="registro" value="1" />
-                        <input type="submit" name="crear_trabajador" class="entradas" value="Add Employee" />
+                        <input type="submit" name="crear_trabajador" class="entradas" value="Add Employee" title="This feature has been disable by the administrator. Demo purposes only." disabled/>
+                        <span data-title="This feature has been disable by the adminsitrator. Demo purposes only."><i class="fa fa-info-circle tooltip" style="color:white;" aria-hidden="true" ></i></span>
                     </form>
                 </div>
     </div>
 </body>
+<script>
+document.getElementById("ssn").onkeyup = function() {
+  var val = this.value.replace(/\D/g, '');
+  var newVal = '';
 
+  if(val.length > 4) {
+    this.value = val;
+  }
+
+  if((val.length > 3) && (val.length < 6)) {
+    newVal += val.substr(0, 3) + '-';
+    val = val.substr(3);
+  }
+
+  if (val.length > 5) {
+    newVal += val.substr(0, 3) + '-';
+    newVal += val.substr(3, 2) + '-';
+    val = val.substr(5);
+  }
+
+  newVal += val;
+  this.value = newVal;
+};
+</script>
 </html>
